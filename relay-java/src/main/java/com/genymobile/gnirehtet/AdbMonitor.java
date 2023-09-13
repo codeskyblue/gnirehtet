@@ -156,6 +156,7 @@ public class AdbMonitor {
     }
 
     void handlePacket(String packet) {
+        Log.i(TAG, "Received packet: " + packet.trim());
         List<String> currentConnectedDevices = parseConnectedDevices(packet);
         for (String serial : currentConnectedDevices) {
             if (!connectedDevices.contains(serial)) {

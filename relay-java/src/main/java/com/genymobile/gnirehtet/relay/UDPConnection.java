@@ -71,7 +71,7 @@ public class UDPConnection extends AbstractConnection {
 
     @Override
     public void disconnect() {
-        logi(TAG, "Close");
+        logd(TAG, "Close");
         selectionKey.cancel();
         try {
             channel.close();
@@ -86,7 +86,7 @@ public class UDPConnection extends AbstractConnection {
     }
 
     private DatagramChannel createChannel() throws IOException {
-        logi(TAG, "Open");
+        logd(TAG, "Open");
         DatagramChannel datagramChannel = DatagramChannel.open();
         datagramChannel.configureBlocking(false);
         datagramChannel.connect(getRewrittenDestination());
